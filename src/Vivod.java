@@ -7,14 +7,23 @@ import java.util.Scanner;
 public class Vivod {
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		String path = "\\C:\\Users\\User\\Desktop\\answers.txt";
-		File file = new File(path);
+		Logic logic = new Logic("./answers.txt");
 		
-		Scanner scanner = new Scanner (file);
-		
-		System.out.println (scanner.nextLine());
-		scanner.close();
+		Scanner in = new Scanner(System.in);
+		 System.out.println(logic.getHello());
+		 
+		  while (true) {
 
+		            String s = in.nextLine();
+
+		            switch (s) {
+		                    case "\"Goodbye\"":
+		                        System.out.println(logic.getGoodbye());
+		                        System.exit(0);
+		                    default:
+		                        System.out.println(logic.getRandomAnswer());
+		                }
+		}
 	}
 
 }
